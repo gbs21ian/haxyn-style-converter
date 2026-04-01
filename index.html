@@ -162,6 +162,7 @@
             if (!text) return "";
 
             // 1. 기초 치환 (문장 전체에 먼저 적용)
+            text = text.replace(/데/g, '대'); 
             text = text.replace(/진짜/g, 'ㅈㅉ');
             text = text.replace(/너무/g, 'ㅈㄴ');
             text = text.replace(/정말/g, 'ㅈㅉ');
@@ -183,14 +184,14 @@
             text = text.replace(/잖아요/g, '잔아여');
             text = text.replace(/인데/g, '인대');
             text = text.replace(/근데/g, '근대');
-            text = text.replace(/데/g, '대'); // 핵심 요구사항: 모든 '데'를 '대'로
+            text = text.replace(/데/g, '대'); // 다시 한번 확실하게
 
             let words = text.split(/\s+/);
             let convertedWords = [];
 
             // 2. 문장 시작어 추가
             if (Math.random() < 0.35) {
-                const starters = ['ㅇㄴ', 'ㅅㅂ', '아니', '근대', '왁'];
+                const starters = ['ㅇㄴ', 'ㅅㅂ', '아니', '근대'];
                 convertedWords.push(starters[Math.floor(Math.random() * starters.length)]);
             }
 
