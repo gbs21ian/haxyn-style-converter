@@ -200,11 +200,10 @@
                 word = word.replace(/잖아요/g, '잔아여');
                 word = word.replace(/인데/g, '인대');
                 word = word.replace(/근데/g, '근대');
+                word = word.replace(/데/g, '대');
 
                 // 4. Ending variations
-                if (word.endsWith('데')) {
-                    word = word.slice(0, -1) + '대';
-                } else if (word.endsWith('어')) {
+                if (word.endsWith('어')) {
                     const r = Math.random();
                     if (r < 0.25) word = word.slice(0, -1) + '더';
                     else if (r < 0.5) word = word.slice(0, -1) + '어어';
